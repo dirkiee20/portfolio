@@ -26,7 +26,7 @@ export default function Contact() {
     <section id="contact" className="py-24 px-4 flex flex-col items-center bg-gradient-to-br from-cyan-900/40 via-gray-900/80 to-cyan-950/60 relative overflow-hidden">
       <h2 className="text-5xl font-extrabold mb-12 text-cyan-400 drop-shadow-lg tracking-tight text-center">Get in Touch</h2>
       <div className="w-full max-w-5xl flex flex-col md:flex-row gap-y-8 md:gap-12 items-stretch justify-center mx-auto">
-        <form className="flex-1 min-w-[340px] max-w-xl glass-effect bg-white/10 border border-cyan-400/30 rounded-2xl px-10 py-6 shadow-2xl flex flex-col gap-6 backdrop-blur-md mx-auto">
+        <form className="flex-1 min-w-[240px] max-w-xs md:max-w-xl glass-effect bg-white/10 border border-cyan-400/30 rounded-2xl px-6 md:px-10 py-4 shadow-2xl flex flex-col gap-4 backdrop-blur-md mx-auto">
           <p className="text-lg md:text-xl font-semibold text-cyan-200 mb-6 text-center">
             For business inquiries, collaborations, or questions, please fill out the form below.
           </p>
@@ -40,7 +40,7 @@ export default function Contact() {
         {/* Vertical Separator Line */}
         <div className="hidden md:block w-px h-96 bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent mx-8"></div>
         {/* Right: Contact Info and Socials */}
-        <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 h-full min-h-[400px]">
+        <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 h-full min-h-[400px] mt-0 md:mt-12">
           {/* Contact Info */}
           <div className="flex flex-col gap-6 w-full max-w-xs justify-center items-start">
             <div className="flex items-center gap-3">

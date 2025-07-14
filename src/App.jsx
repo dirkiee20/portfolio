@@ -8,6 +8,7 @@ import Contact from './sections/Contact';
 
 export default function App() {
   const [showNav, setShowNav] = useState(true);
+  const [showMobilePortfolio, setShowMobilePortfolio] = useState(true);
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
@@ -26,6 +27,14 @@ export default function App() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  useEffect(() => {
+    const handleMobileScroll = () => {
+      if (window.innerWidth >= 768) return;
+      setShowMobilePortfolio(window.scrollY < 40);
+    };
+    window.addEventListener('scroll', handleMobileScroll);
+    return () => window.removeEventListener('scroll', handleMobileScroll);
   }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-sans">
@@ -54,7 +63,9 @@ export default function App() {
         </div>
       </nav>
       {/* Mobile Portfolio text only */}
-      <div className="md:hidden fixed top-6 left-6 z-50 text-xl font-bold font-[Poppins,sans-serif] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent tracking-wide drop-shadow-[0_2px_24px_rgba(34,211,238,0.5)]" style={{ fontFamily: "'Poppins', sans-serif" }}>Portfolio</div>
+      {showMobilePortfolio && (
+        <div className="md:hidden fixed top-6 left-6 z-50 text-xl font-bold font-[Poppins,sans-serif] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent tracking-wide drop-shadow-[0_2px_24px_rgba(34,211,238,0.5)] pointer-events-none select-none" style={{ fontFamily: "'Poppins', sans-serif" }}>Portfolio</div>
+      )}
       <main className="pt-24">
         <Hero />
         <About />
